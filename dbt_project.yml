@@ -4,6 +4,12 @@ version: '1.0.0'
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 config-version: 2
 
+vars:
+  # Enables the package DBT_CONSTRAINTS. Package details: https://hub.getdbt.com/snowflake-labs/dbt_constraints/latest/
+  dbt_constraints_enabled: false
+  # The DBT_CONSTRAINTS package can also add constraints on sources if you have sufficient privileges
+  dbt_constraints_sources_enabled: false
+
 dispatch:
   - macro_namespace: dbt
     search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_project_evaluator', 'dbt']
