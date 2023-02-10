@@ -1,4 +1,9 @@
 
+
+models/
+macros/
+tests/
+packages/
 target/
 dbt_modules/
 dbt_packages/
