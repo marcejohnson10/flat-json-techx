@@ -10,11 +10,11 @@ vars:
   # The DBT_CONSTRAINTS package can also add constraints on sources if you have sufficient privileges
   dbt_constraints_sources_enabled: false
 
-dispatch:
-  - macro_namespace: dbt
-    search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_project_evaluator', 'dbt']
-  - macro_namespace: dbt_utils
-    search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_utils']
+#dispatch:
+#  - macro_namespace: dbt
+#    search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_project_evaluator', 'dbt']
+#  - macro_namespace: dbt_utils
+#    search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_utils']
 
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
