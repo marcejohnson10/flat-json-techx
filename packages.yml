@@ -1,3 +1,13 @@
 packages:
   - package: dbt-labs/dbt_utils
-    version: [">=0.7.0", "<2.0.0"]
+    version: [">=0.9.6", "<2.0.0"]
+  - package: dbt-labs/codegen
+    version: [">=0.9.0", "<1.0.0"]    
+  - package: brooklyn-data/dbt_artifacts
+    version: [">=2.1.0", "<3.0.0"]
+  - package: dbt-labs/dbt_project_evaluator
+    version: [">=0.2.1", "<5.0.0"]
+  - package: Snowflake-Labs/dbt_constraints
+    version: ">=0.6.0"
+  - package: calogica/dbt_expectations
+    version: [">=0.8.2", "<0.9.0"]    
