@@ -16,8 +16,15 @@ vars:
 #  - macro_namespace: dbt_utils
 #    search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_utils']
 
-target-path: "target"
-clean-targets: ["target", "dbt_packages"]
+log-path: "managed_assets/logs"
+packages-install-path: "managed_assets/packages"
+target-path: "managed_assets/target"   # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+  - "managed_assets/target"
+  - "managed_assets/packages"
+
+#target-path: "target"
+#clean-targets: ["target", "dbt_packages"]
 macro-paths: ["macros"]
 log-path: "logs"
 model-paths: ["models"]
