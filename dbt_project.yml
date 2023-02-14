@@ -1,30 +1,17 @@
 name: 'fitb_dbt_utils'
-version: '1.1.0'
+version: '1.0.0'
 
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 config-version: 2
 
-vars:
-  # Enables the package DBT_CONSTRAINTS. Package details: https://hub.getdbt.com/snowflake-labs/dbt_constraints/latest/
-  dbt_constraints_enabled: false
-  # The DBT_CONSTRAINTS package can also add constraints on sources if you have sufficient privileges
-  dbt_constraints_sources_enabled: false
+dispatch:
+  - macro_namespace: dbt
+    search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_project_evaluator', 'dbt']
+  - macro_namespace: dbt_utils
+    search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_utils']
 
-#dispatch:
-#  - macro_namespace: dbt
-#    search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_project_evaluator', 'dbt']
-#  - macro_namespace: dbt_utils
-#    search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_utils']
-
-log-path: "managed_assets/logs"
-packages-install-path: "managed_assets/packages"
-target-path: "managed_assets/target"   # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
-  - "managed_assets/target"
-  - "managed_assets/packages"
-
-#target-path: "target"
-#clean-targets: ["target", "dbt_packages"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
 macro-paths: ["macros"]
 log-path: "logs"
 model-paths: ["models"]
