@@ -11,8 +11,7 @@ dispatch:
     search_order: ['my_project_name', 'fitb_dbt_utils', 'dbt_utils']
 
 target-path: "target"
-clean-targets: ["target", "dbt_packages"]
-macro-paths: ["macros"]
+clean-targets: ["target", "dbt_packages","packages']
 log-path: "logs"
 model-paths: ["models"]
 
